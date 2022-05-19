@@ -1,49 +1,51 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../../../components/already_have_an_account_check.dart';
 import '../../../components/rounded_button.dart';
-import '../../../components/rounded_input_field.dart';
-import '../../../components/rounded_password_field.dart';
+import '../../../constants.dart';
+import '../../Login/login_screen.dart';
 import '../../Signup/signup_screen.dart';
 import 'background.dart';
 
 class Body extends StatelessWidget {
-  const Body({
-    Key? key,
-  }) : super(key: key);
+  const Body({super.key});
 
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
+    // This size provide us total height and width of our screen
     return Background(
       child: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text(
-              "LOGIN",
+              "WELCOME TO EDU",
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
-            SizedBox(height: size.height * 0.03),
+            SizedBox(height: size.height * 0.05),
             SvgPicture.asset(
-              "assets/icons/login.svg",
-              height: size.height * 0.35,
+              "assets/icons/chat.svg",
+              height: size.height * 0.45,
             ),
-            SizedBox(height: size.height * 0.03),
-            RoundedInputField(
-              hintText: "Your Email",
-              onChanged: (value) {},
-            ),
-            RoundedPasswordField(
-              onChanged: (value) {},
-            ),
+            SizedBox(height: size.height * 0.05),
             RoundedButton(
               text: "LOGIN",
-              press: () {},
+              press: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return const LoginScreen();
+                    },
+                  ),
+                );
+              },
             ),
-            SizedBox(height: size.height * 0.03),
-            AlreadyHaveAnAccountCheck(
+            RoundedButton(
+              text: "SIGN UP",
+              color: kPrimaryLightColor,
+              textColor: Colors.black,
               press: () {
                 Navigator.push(
                   context,
