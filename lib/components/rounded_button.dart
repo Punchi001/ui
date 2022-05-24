@@ -4,14 +4,14 @@ import '../constants.dart';
 
 class RoundedButton extends StatelessWidget {
   final String text;
-  final Function press;
+  final press;
   final Color color, textColor;
   const RoundedButton({
     Key? key,
     required this.text,
-    required this.press,
     this.color = kPrimaryColor,
     this.textColor = Colors.white,
+    required this.press,
   }) : super(key: key);
 
   @override
@@ -32,12 +32,13 @@ class RoundedButton extends StatelessWidget {
 
   Widget newElevatedButton() {
     return ElevatedButton(
-      onPressed: () {},
+      onPressed: press,
       style: ElevatedButton.styleFrom(
-          primary: color,
-          padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 20),
-          textStyle: TextStyle(
-              color: textColor, fontSize: 14, fontWeight: FontWeight.w500)),
+        primary: color,
+        padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 20),
+        textStyle: TextStyle(
+            color: textColor, fontSize: 14, fontWeight: FontWeight.w500),
+      ),
       child: Text(
         text,
         style: TextStyle(color: textColor),
