@@ -2,6 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../components/already_have_an_account_check.dart';
+import '../../../components/controller/confirm_password_controller.dart';
+import '../../../components/controller/email_controller.dart';
+import '../../../components/controller/first_name_controller.dart';
+import '../../../components/controller/last_name_controller.dart';
+import '../../../components/controller/password_controller.dart';
 import '../../../components/rounded_button.dart';
 import '../../../components/rounded_input_field.dart';
 import '../../../components/rounded_password_field.dart';
@@ -18,6 +23,14 @@ class Body extends StatefulWidget {
 }
 
 class _BodyState extends State<Body> {
+  final _formkey = GlobalKey<FormState>();
+
+  final firstNameController = TextEditingController();
+  final lastNameController = TextEditingController();
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
+  final confirmPasswordController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -34,6 +47,14 @@ class _BodyState extends State<Body> {
             SvgPicture.asset(
               "assets/icons/signup.svg",
               height: size.height * 0.35,
+            ),
+            FirstNameController(firstNameController: firstNameController),
+            LastNameController(lastNameController: lastNameController),
+            EmailController(emailController: emailController),
+            PasswordController(passwordController: passwordController),
+            ConfirmPasswordController(
+              confirmPasswordController: confirmPasswordController,
+              passwordController: passwordController,
             ),
             RoundedInputField(
               hintText: "Your Email",
