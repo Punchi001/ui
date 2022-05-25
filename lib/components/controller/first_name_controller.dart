@@ -19,8 +19,10 @@ class FirstNameController extends StatelessWidget {
         keyboardType: TextInputType.name,
         textInputAction: TextInputAction.next,
         decoration: const InputDecoration(
-          prefixIcon: Icon(Icons.person),
-          labelText: "First Name",
+          prefixIcon: Icon(
+            Icons.person,
+            color: Colors.purple,
+          ),
           hintText: "Enter your first name",
           contentPadding: EdgeInsets.zero,
           focusedBorder: OutlineInputBorder(

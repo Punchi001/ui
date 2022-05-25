@@ -34,7 +34,10 @@ class EmailController extends StatelessWidget {
           value = emailController.text;
         },
         decoration: const InputDecoration(
-          labelText: "Email",
+          prefixIcon: Icon(
+            Icons.mail_lock,
+            color: Colors.purple,
+          ),
           hintText: "Enter your email",
           contentPadding: EdgeInsets.zero,
           focusedBorder: OutlineInputBorder(

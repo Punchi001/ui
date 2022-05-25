@@ -33,7 +33,10 @@ class PasswordController extends StatelessWidget {
           value = passwordController.text;
         },
         decoration: const InputDecoration(
-          labelText: "Password",
+          prefixIcon: Icon(
+            Icons.key_rounded,
+            color: Colors.purple,
+          ),
           hintText: "Enter your password",
           contentPadding: EdgeInsets.zero,
           focusedBorder: OutlineInputBorder(

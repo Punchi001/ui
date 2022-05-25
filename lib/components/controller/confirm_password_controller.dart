@@ -36,7 +36,10 @@ class ConfirmPasswordController extends StatelessWidget {
           value = confirmPasswordController.text;
         },
         decoration: const InputDecoration(
-          labelText: "Confirm Password",
+          prefixIcon: Icon(
+            Icons.key_off_rounded,
+            color: Colors.purple,
+          ),
           hintText: "Confirm your password",
           contentPadding: EdgeInsets.zero,
           focusedBorder: OutlineInputBorder(
