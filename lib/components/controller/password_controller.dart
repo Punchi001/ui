@@ -34,7 +34,7 @@ class PasswordController extends StatelessWidget {
         },
         decoration: const InputDecoration(
           prefixIcon: Icon(
-            Icons.key_rounded,
+            Icons.key_off_rounded,
             color: Colors.purple,
           ),
           hintText: "Enter your password",

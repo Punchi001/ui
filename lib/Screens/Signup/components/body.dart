@@ -56,13 +56,6 @@ class _BodyState extends State<Body> {
               confirmPasswordController: confirmPasswordController,
               passwordController: passwordController,
             ),
-            RoundedInputField(
-              hintText: "Your Email",
-              onChanged: (value) {},
-            ),
-            RoundedPasswordField(
-              onChanged: (value) {},
-            ),
             RoundedButton(
               text: "SIGNUP",
               press: () {},
